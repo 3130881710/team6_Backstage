@@ -1,0 +1,20 @@
+import React from 'react';
+import { Router, Route, Switch,Redirect } from 'dva/router';
+// import IndexPage from './routes/IndexPage';
+import Routerview from './components/router-view'
+import RouterConfigs from './router/router'
+import "antd/dist/antd.css";
+function RouterConfig({ history }) {
+  return (
+    <Router history={history}>
+      <Switch>
+        <Routerview childRoutes={RouterConfigs}></Routerview>
+        <Route path="/"  component={()=>{
+          return<Redirect to='/Login'/>
+          }} exact/>
+      </Switch>
+    </Router>
+  );
+}
+
+export default RouterConfig;

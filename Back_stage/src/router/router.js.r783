@@ -1,0 +1,52 @@
+import Login from "../container/login/IndexPage";
+import Home from "../home/home";
+import indone from "../components/Adminis";
+import indtwo from "../components/AdQue";
+import indthree from "../components/Cofig";
+import indfour from "../components/Example";
+import indfive from "../components/UserAdditions";
+import indthere from "../components/ChTheque";
+
+const routs = [
+  {
+    path: "/",
+    component: Login
+  },
+  {
+    path: "/home",
+    component: Home,
+    children: [
+      {
+        name: "添加试题",
+        path: "/home/indone",
+        component: indone
+      },
+      {
+        name: "试题分类",
+        path: "/home/indtwo",
+        component: indtwo
+      },
+      {
+        name: "查看试题",
+        path: "/home/indthree",
+        component: indthree
+      },
+      {
+        name: "添加用户",
+        path: "/home/indfour",
+        component: indfour
+      },
+      {
+        name: "用户分类",
+        path: "/home/indfive",
+        component: indfive
+      },
+      {
+        name: "查看用户",
+        path: "/home/indthere",
+        component: indthere
+      }
+    ]
+  }
+];
+export default routs;
